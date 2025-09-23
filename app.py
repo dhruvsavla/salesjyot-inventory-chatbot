@@ -30,7 +30,7 @@ app.add_middleware(
 load_dotenv()  # loads .env into os.environ
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-CONNECTION_STRING = os.getenv("PROD_DATABASE_URL")
+CONNECTION_STRING = os.getenv("DATABASE_URL")
 EMBED_MODEL = "text-embedding-3-small"
 LLM_MODEL = "gpt-4o-mini"
 
