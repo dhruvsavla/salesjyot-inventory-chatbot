@@ -20,7 +20,7 @@ app = FastAPI(title="Warehouse Chatbot API")
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://techjyot.up.railway.app"],  # React frontend
+    allow_origins=["*"],  # React frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -48,7 +48,7 @@ embeddings = OpenAIEmbeddings(model=EMBED_MODEL)
 vectorstore = PGVector(
     connection_string=CONNECTION_STRING,
     embedding_function=embeddings,
-    collection_name="embedded_text"
+    collection_name="langchain_pg_embedding"
 )
 
 llm = ChatOpenAI(model=LLM_MODEL, temperature=0)
