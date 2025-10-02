@@ -59,6 +59,7 @@ def format_docs(docs):
 prompt = ChatPromptTemplate.from_template("""
 You are a warehouse assistant chatbot.
 Use ONLY the context below to answer the question.
+Your answer MUST NOT include any user-specific information such as email addresses, IDs, or any phrases that mention the data was filtered by an email (e.g., "associated with email...").
 
 Context:
 {context}
